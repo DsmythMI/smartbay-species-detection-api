@@ -3,8 +3,8 @@ requires = ["setuptools", "setuptools-scm"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "obsea_fish_detection"
-description = "AI-based fish detection and classification algorithm based on YOLOv8"
+name = "smartbay_species_detection"
+description = "AI-based species detection and classification algorithm based on YOLOv8"
 readme = "README.md"
 requires-python = ">=3.8"
 license = { text = "MIT" }
@@ -23,11 +23,12 @@ authors = [
   {name = "Enoc Martinez", email = "enoc.martinez@upc.edu"},
   {name = "Oriol Prat Bayarri", email = "oriol.prat.bayarri@upc.edu"},
   {name = "Pol Banos Castello", email = "pol.banos.castello@upc.edu"},
+  {name = "Damian Smyth", email = "datarequests@marine.ie"},
 ]
 
 [project.urls]
-"Homepage" = "https://codebase.helmholtz.cloud/m-team/ai/obsea-fish-detection"
-"Bug Tracker" = "https://codebase.helmholtz.cloud/m-team/ai/obsea-fish-detection/issues"
+"Homepage" = "https://github.com/DsmythMI/smartbay-species-detection-api"
+"Bug Tracker" = "https://github.com/DsmythMI/smartbay-species-detection-api/issues"
 
 [tool.pytest.ini_options]
 pythonpath = ["."]
@@ -35,7 +36,7 @@ env = ["DATA_PATH=tests/data", "MODELS_PATH=tests/models"]
 addopts = "--import-mode=importlib"
 
 [tool.setuptools]
-packages = ["yolov8_api", "obsea_fish_detection.api"]
+packages = ["yolov8_api", "smartbay_species_detection.api"]
 
 [tool.setuptools.package-dir]
 "obsea_fish_detection.api" = "api"
@@ -46,4 +47,4 @@ dependencies = { file = ["requirements.txt"] }
 version = { file = "VERSION" }
 
 [project.entry-points."deepaas.v2.model"]
-obsea_fish_detection = "obsea_fish_detection.api"
+smartbay_species_detection = "smartbay_species_detection.api"
