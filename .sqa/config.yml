@@ -2,7 +2,7 @@
 sqa_criteria:
   qc_style:
     repos:
-      obsea-fish-detection:
+      smartbay-species-detection-api:
         container: thisrepo-testing
         commands:
           - sh -c 'pip3 install ai4-metadata-validator'
