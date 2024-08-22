@@ -14,9 +14,9 @@ ARG tag=latest
 # Base image, e.g. tensorflow/tensorflow:2.9.1
 FROM ai4oshub/ai4os-yolov8-torch:${tag}
 
-LABEL maintainer='Enoc Martinez, Oriol Prat Bayarri, Pol Banos Castello'
+LABEL maintainer='Damian Smyth, Enoc Martinez, Oriol Prat Bayarri, Pol Banos Castello'
 LABEL version='0.0.1'
-# AI-based fish detection and classification algorithm based on YOLOv8. The model has been finetuned to detect and classify fish at the OBSEA underwater observatory.
+# AI-based species detection and classification algorithm based on YOLOv8. The model has been finetuned to detect and classify fish at the Smartbay underwater observatory.
 
 # Download new model weights and remove old ones
 # Download model from provisional server
@@ -31,13 +31,13 @@ ENV YOLOV8_DEFAULT_WEIGHTS="yolov8_smartbay_small"
 ENV YOLOV8_DEFAULT_TASK_TYPE="det"
 
 # Uninstall existing module ("yolov8_api")
-# Update MODEL_NAME to obsea_fish_detection
+# Update MODEL_NAME to smartbay_species_detection
 # Copy updated pyproject.toml to include Smartbay authors and rename the module
 # Re-install application with the updated pyproject.toml
 RUN cd /srv/ai4os-yolov8-torch && \
     module=$(cat pyproject.toml |grep '\[project\]' -A1 |grep 'name' | cut -d'=' -f2 |tr -d ' ' |tr -d '"') && \
     pip uninstall -y $module
-ENV MODEL_NAME="obsea_fish_detection"
+ENV MODEL_NAME="smartbay_species_detection"
 COPY ./pyproject-child.toml /srv/ai4os-yolov8-torch/pyproject.toml
 RUN cd /srv/ai4os-yolov8-torch && pip install --no-cache -e .
 
