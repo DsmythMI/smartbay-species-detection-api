@@ -1,9 +1,9 @@
-# OBSEA Fish Detection
-[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/obsea-fish-detection/main)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/obsea-fish-detection/job/main/)
+# Smartbay Marine Species Detection
+[![Build Status](https://jenkins.services.ai4os.eu/buildStatus/icon?job=AI4OS-hub/smartbay-fish-detection-api/main)](https://jenkins.services.ai4os.eu/job/AI4OS-hub/job/smartbay-fish-detection-api/job/main/)
 
-AI-based fish detection and classification algorithm based on YOLOv8. The model has been finetuned to detect and classify fish at the OBSEA underwater observatory.
+AI-based fish detection and classification algorithm based on YOLOv8. The model has been finetuned to detect and classify fish at the Smartbay underwater observatory.
 
-This is a container that will run the obsea-fish-detection application leveraging the DEEP as a Service API component ([DEEPaaS API](https://github.com/ai4os/DEEPaaS)). The application is based on **ai4oshub/ai4os-yolov8-torch** module.
+This is a container that will run the smartbay-fish-detection-api application leveraging the DEEP as a Service API component ([DEEPaaS API](https://github.com/ai4os/DEEPaaS)). The application is based on **ai4oshub/ai4os-yolov8-torch** module.
 
     
 ## Running the container
@@ -13,7 +13,7 @@ This is a container that will run the obsea-fish-detection application leveragin
 To run the Docker container directly from Docker Hub and start using the API, simply run the following command:
 
 ```bash
-$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 ai4oshub/obsea-fish-detection
+$ docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 ai4oshub/smartbay-fish-detection-api
 ```
 
 This command will pull the Docker container from the Docker Hub [ai4oshub](https://hub.docker.com/u/ai4oshub/) repository and start the default command (`deepaas-run --listen-ip=0.0.0.0`).
@@ -24,10 +24,10 @@ This command will pull the Docker container from the Docker Hub [ai4oshub](https
 
 If you want to build the container directly in your machine (because you want to modify the `Dockerfile` for instance) follow the following instructions:
 ```bash
-git clone https://github.com/ai4os-hub/obsea-fish-detection
-cd obsea-fish-detection
-docker build -t ai4oshub/obsea-fish-detection .
-docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 ai4oshub/obsea-fish-detection
+git clone https://github.com/ai4os-hub/smartbay-fish-detection-api
+cd smartbay-fish-detection-api
+docker build -t ai4oshub/smartbay-fish-detection-api .
+docker run -ti -p 5000:5000 -p 6006:6006 -p 8888:8888 ai4oshub/smartbay-fish-detection-api
 ```
 
 These three steps will download the repository from GitHub and will build the Docker container locally on your machine. You can inspect and modify the `Dockerfile` in order to check what is going on. For instance, you can pass the `--debug=True` flag to the `deepaas-run` command, in order to enable the debug mode.
