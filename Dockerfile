@@ -42,6 +42,6 @@ COPY ./pyproject-child.toml /srv/ai4os-yolov8-torch/pyproject.toml
 RUN cd /srv/ai4os-yolov8-torch && pip install --no-cache -e .
 
 RUN mkdir -p /srv/ai4os-yolov8-torch/models/yolov8_smartbay_small/weights && \
-    curl -L https://github.com/DsmythMI/smartbay-species-detection-api/releases/download/model01/smartbay-species-marine-types-t3-3-yolo8s_01.pt \
+    curl -L https://github.com/DsmythMI/smartbay-species-detection-api/releases/download/modelv02/smartbay-species-marine-types-t3-3-yolo8s_02.pt \
     --output /srv/ai4os-yolov8-torch/models/yolov8_smartbay_small/weights/best.pt
    
